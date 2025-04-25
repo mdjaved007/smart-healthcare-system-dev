@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Router DOM Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.min.js"></script>
+  <script defer src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
+
+    const Home = () => <h2 className="text-center mt-10 text-xl">Home Page</h2>;
+    const About = () => <h2 className="text-center mt-10 text-xl">About Page</h2>;
+
+    const App = () => (
+      <BrowserRouter>
+        <nav className="p-4 bg-blue-600 text-white flex gap-4 justify-center">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
