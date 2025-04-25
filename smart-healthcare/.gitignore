@@ -7,18 +7,34 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node.js
+node_modules/
+dist/
+dist-ssr/
 *.local
 
+# Environment variables
+.env
+!.env.example  # Allow a sample .env file if you want to include one
+
+# Build output
+build/
+
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# OneDrive-specific (if applicable)
+# Exclude OneDrive temp files if they interfere
+*.tmp
